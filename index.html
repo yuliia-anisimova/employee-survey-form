@@ -4,100 +4,163 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Form</title>
+    <title>Survey Form</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-      <h1>Registration Form</h1>
-      <p>Please fill out this form with the required information</p>
-      <form method="post" action="https://register-demo.freecodecamp.org">
-        <fieldset>
-          <label for="first-name"
-            >Enter Your First Name:
-            <input id="first-name" name="first-name" type="text" required
-          /></label>
-          <label for="last-name"
-            >Enter Your Last Name:
-            <input id="last-name" name="last-name" type="text" required
-          /></label>
-          <label for="email"
-            >Enter Your Email:
-            <input id="email" name="email" type="email" required
-          /></label>
-          <label for="new-password"
-            >Create a New Password:
+    <div class="container">
+      <header>
+        <h1 id="title" class="main-heading">Employee Survey</h1>
+        <p id="description" class="description">
+          Please fill out this form with the required information
+        </p>
+      </header>
+      <form action="#" id="survey-form" class="survey-form">
+        <fieldset class="survey-section">
+          <label id="name-label" for="name" class="label"
+            >Name:
             <input
-              id="new-password"
-              name="new-password"
-              type="password"
-              pattern="[a-z0-5]{8,}"
+              id="name"
+              name="name"
+              type="text"
+              required
+              class="input-area"
+              placeholder="Enter your name"
+          /></label>
+          <label id="email-label" for="email"
+            >Email:
+            <input
+              id="email"
+              name="email"
+              type="email"
+              class="input-area"
+              placeholder="Enter your Email"
               required
           /></label>
-        </fieldset>
-        <fieldset>
-          <label for="personal-account"
-            ><input
-              id="personal-account"
-              type="radio"
-              name="account-type"
-              class="inline"
-            />
-            Personal Account</label
-          >
-          <label for="business-account"
-            ><input
-              id="business-account"
-              type="radio"
-              name="account-type"
-              class="inline"
-            />
-            Business Account</label
-          >
-          <label for="terms-and-conditions" name="terms-and-conditions">
+          <label id="number-label" for="age"
+            >Age:
             <input
-              id="terms-and-conditions"
-              type="checkbox"
+              id="number"
+              name="age"
+              type="number"
+              class="input-area"
+              placeholder="Enter your age"
+              min="16"
+              max="100"
               required
-              name="terms-and-conditions"
-              class="inline"
-            />
-            I accept the
-            <a href="https://www.freecodecamp.org/news/terms-of-service/"
-              >terms and conditions</a
-            >
-          </label>
-        </fieldset>
-        <fieldset>
-          <label for="profile-picture"
-            >Upload a profile picture:
-            <input id="profile-picture" type="file" name="file"
           /></label>
-          <label for="age"
-            >Input your age (years):
-            <input id="age" type="number" name="age" min="13" max="120"
-          /></label>
-          <label for="referrer"
-            >How did you hear about us?
-            <select id="referrer" name="referrer">
-              <option value="">(select one)</option>
-              <option value="1">freeCodeCamp News</option>
-              <option value="2">freeCodeCamp YouTube Channel</option>
-              <option value="3">freeCodeCamp Forum</option>
-              <option value="4">Other</option>
+          <label for="current-role">
+            Which option best describes your current role?
+            <select name="current-role" id="dropdown" class="select-area">
+              <option value="">Select current role</option>
+              <option value="1">Full Time Job</option>
+              <option value="2">Part-time Job</option>
+              <option value="3">Contact Job</option>
+              <option value="4">Temporary Job</option>
+              <option value="5">Prefer not to say</option>
+              <option value="6">Other</option>
             </select>
           </label>
-          <label for="bio"
-            >Provide a bio:
+        </fieldset>
+
+        <fieldset class="survey-section">
+          <p class="label-description">
+            How would you describe your overall level of job satisfaction?
+          </p>
+          <label class="radio" for=""
+            ><input
+              type="radio"
+              name="job-satisfaction"
+              value="very satisfied"
+            />
+            Very satisfied</label
+          >
+          <label class="radio" for=""
+            ><input
+              type="radio"
+              name="job-satisfaction"
+              value="somewhat satisfied"
+            />
+            Somewhat satisfied</label
+          >
+          <label class="radio" for=""
+            ><input type="radio" name="job-satisfaction" value="neutral" />
+            Neutral</label
+          >
+          <label class="radio" for=""
+            ><input
+              type="radio"
+              name="job-satisfaction"
+              value="somewhat disatisfied"
+            />
+            Somewhat disatisfied</label
+          >
+          <label class="radio" for=""
+            ><input
+              type="radio"
+              name="job-satisfaction"
+              value="very disatisfied"
+            />
+            Very disatisfied</label
+          >
+
+          <p class="label-description">
+            What are the most important things for you at work?
+            <span class="">(Check all that apply)</span>
+          </p>
+          <label class="checkbox" for=""
+            ><input type="checkbox" value="Interesting task" /> Interesting
+            tasks</label
+          >
+          <label class="checkbox" for=""
+            ><input type="checkbox" value="flexible hours" /> Flexible
+            hours</label
+          >
+          <label class="checkbox" for=""
+            ><input type="checkbox" value="long holidays" /> Long
+            holidays</label
+          >
+          <label class="checkbox" for=""
+            ><input type="checkbox" value="high salary" /> High salary</label
+          >
+          <label class="checkbox" for=""
+            ><input type="checkbox" value="training opportunities" /> Training
+            opportunities</label
+          >
+          <label class="checkbox" for=""
+            ><input type="checkbox" value="overall benefits" /> Overall
+            benefits</label
+          >
+          <label class="checkbox" for=""
+            ><input type="checkbox" value="relationships" /> Good relationships
+            with other employees/customers</label
+          >
+          <label class="checkbox" for=""
+            ><input type="checkbox" value="boss" /> Friendly boss</label
+          >
+        </fieldset>
+
+        <fieldset class="survey-section">
+          <label for="" class>
+            Please provide any additional feedback
             <textarea
-              id="bio"
-              name="bio"
-              rows="3"
-              cols="30"
-              placeholder="I like coding on the beach..."
+              name=""
+              id=""
+              cols="20"
+              rows="5"
+              class="feedback-area"
+              placeholder="Enter your comment here..."
             ></textarea>
           </label>
+          <input id="submit" type="submit" value="Submit" class="submit" />
         </fieldset>
-        <input type="submit" value="Submit" />
       </form>
+    </div>
   </body>
 </html>
